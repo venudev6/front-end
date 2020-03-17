@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Package') {
             steps {
-                echo 'Packaging....'
+                echo 'Packaging....the app'
 		sh 'npm install'
 		sh 'npm run test'
 		sh 'npm run package''
