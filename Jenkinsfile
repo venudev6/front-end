@@ -2,6 +2,7 @@ pipeline {
     agent any
 
        tools {
+	 nodejs 'node4.8.6'
 	 maven 'Maven 3.6.3'	
        }
 
@@ -24,7 +25,7 @@ pipeline {
                 echo 'Packaging....the app'
 		sh 'npm install'
 		sh 'npm run test'
-		sh 'npm run package''
+		sh 'npm run package'
 		archiveArtifacts artifacts: '**/distribution/*.zip', fingerprint: true
             }
         }
